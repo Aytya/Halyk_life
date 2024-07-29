@@ -4,5 +4,6 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN go build -o httproxy proxy.go
+
+RUN go build -o httproxy ./cmd/main.go
 CMD ["./httproxy"]
